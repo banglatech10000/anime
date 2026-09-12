@@ -1,0 +1,40 @@
+.watchlist {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.watchlist h1 {
+  color: #ff006e;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.watchlist > p {
+  text-align: center;
+  color: #aaa;
+  padding: 2rem;
+  background: #1a1a1a;
+  border-radius: 8px;
+}
+
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .watchlist {
+    padding: 0 1rem;
+  }
+
+  .watchlist h1 {
+    font-size: 1.5rem;
+  }
+
+  .anime-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
