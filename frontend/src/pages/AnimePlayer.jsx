@@ -9,13 +9,12 @@ function AnimePlayer() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchEpisode();
-  }, [id, ep]);
-
   const fetchEpisode = async () => {
     try {
       const response = await axios.get(`/api/episodes/anime/${id}`);
-      const currentEp = response.data.find(e => e.episode_num === parseInt(ep));
+      const currentEp = response.data.find(
+        e => e.episode_num === parseInt(ep)
+      );
       setEpisode(currentEp);
     } catch (err) {
       console.error('Error fetching episode:', err);
@@ -23,6 +22,9 @@ function AnimePlayer() {
       setLoading(false);
     }
   };
+
+  fetchEpisode();
+}, [id, ep]);
 
   if (loading) return <p>Loading...</p>;
   if (!episode) return <p>Episode not found</p>;
