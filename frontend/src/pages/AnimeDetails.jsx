@@ -10,9 +10,6 @@ function AnimeDetails() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchAnimeDetails();
-  }, [id]);
-
   const fetchAnimeDetails = async () => {
     try {
       const animeRes = await axios.get(`/api/anime/${id}`);
@@ -27,6 +24,9 @@ function AnimeDetails() {
     }
   };
 
+  fetchAnimeDetails();
+}, [id]);
+  
   if (loading) return <p>Loading...</p>;
   if (!anime) return <p>Anime not found</p>;
 
