@@ -10,9 +10,6 @@ function AdminDashboard() {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-    fetchStats();
-  }, []);
-
   const fetchStats = async () => {
     try {
       const response = await axios.get('/api/admin/stats', {
@@ -23,6 +20,9 @@ function AdminDashboard() {
       console.error('Error fetching stats:', err);
     }
   };
+
+  fetchStats();
+}, [token]);
 
   return (
     <div className="admin-dashboard">
