@@ -1,0 +1,21 @@
+.player-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.player-container video {
+  border-radius: 8px;
+  background: #000;
+}
+
+.episode-info {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #1a1a1a;
+  border-radius: 8px;
+}
+
+.episode-info h2 {
+  color: #ff006e;
+}
